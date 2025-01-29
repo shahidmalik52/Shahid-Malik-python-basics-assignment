@@ -21,11 +21,11 @@ print(f"Welcome, {name}! Let's analyze your financial health as a {profession}")
 #     ● Calculate the savings (Income - Expenses).
 #     ● Use arithmetic operators to calculate the percentage of income saved.
 
-monthly_income = int(input('Mmonthly income: '))
-monthly_expense = int(input('Monthly expenses: '))
-savings = monthly_income - monthly_expense
-savings_percentage = int((savings / monthly_income )* 100)
-print(f'Total Savings: {savings} \nSavings Percentage: {savings_percentage}%')
+monthly_income = int(input('Mmonthly income: '))                                # input monthly income
+monthly_expense = int(input('Monthly expenses: '))                              # input monthly expenses
+savings = monthly_income - monthly_expense                                      # calculate savings
+savings_percentage = int((savings / monthly_income )* 100)                      # calculate savings percentage
+print(f'Total Savings: {savings} \nSavings Percentage: {savings_percentage}%')  # display savings and savings percentage
 
 # Financial Health Check:
 #     ● Use nested if-else conditions to provide insights based on the savings percentage:
@@ -38,11 +38,11 @@ print(f'Total Savings: {savings} \nSavings Percentage: {savings_percentage}%')
 #     ○ If savings are less than 10%:
 #           ■ Print: "Warning, [Name]: Your savings are too low. Consider cutting expenses!"
 
-if savings_percentage >= 20:
-    print(f'Great Job, {name}! You have a strong savings habit.')
-elif 10 <= savings_percentage < 20:
+if savings_percentage >= 20:                                                    # savings percentage is >= 20%
+    print(f'Great Job, {name}! You have a strong savings habit.')               
+elif 10 <= savings_percentage < 20:                                             # savings percentage is between 10% and 20%
     print(f'Good, {name}, but you could save a bit more.')
-elif savings_percentage < 10:
+elif savings_percentage < 10:                                                   # savings percentage is < 10%
     print(f'Warning, {name}: Your savings are too low. Consider cutting expenses!')
 
 # Categorize Expenses:
@@ -51,19 +51,19 @@ elif savings_percentage < 10:
 #   2. Wants (e.g., dining out, entertainment)
 #   3. Savings/Investments
 
-while True:
+while True:                                                                     # loop to ensure user enters valid input that match initial inputs
     essential_expense = int(input('How much do you spend on Essential? '))
     wants_expense = int(input('How much do you spend on Wants? '))
     # savings_investment = int(input('How much do you Save or invest? '))
 
-    essential_expense_percentage = (essential_expense/monthly_income)*100
-    wants_expense_percentage = (wants_expense/monthly_income)*100
+    essential_expense_percentage = (essential_expense/monthly_income)*100       # calculate essential expense percentage
+    wants_expense_percentage = (wants_expense/monthly_income)*100               # calculate wants expense percentage
     # saving_investment_percentage = (savings_investment/monthly_income)*100
 
-    if monthly_expense == (essential_expense + wants_expense):
+    if monthly_expense == (essential_expense + wants_expense):                  # check if total expenses match initial input
         print(f'Expense Breakdown: \nEssentials: {essential_expense_percentage}% \nWants: {wants_expense_percentage}% \nSavings/Investments: {savings_percentage}%')
-        break
-    else: 
+        break                                                                   # exit loop if total expenses match initial input
+    else:                                                                       # if total expenses do not match initial input then print error message and continue loop
         print('Your entered breakdown of expenses is invalid')
 
 # Custom Goals:
@@ -74,11 +74,11 @@ while True:
 #   ○ Else:
 #       ■ Print: "Keep working on your savings, [Name]. You're [X]% away from your goal
 
-saving_goal = int(input("What is your Savings goal (in %)? "))
-if savings_percentage >= saving_goal:
+saving_goal = int(input("What is your Savings goal (in %)? "))                  # ask user for savings goal
+if savings_percentage >= saving_goal:                                           # check if current savings percentage is >= savings goal
     status = f"Congratulations, {name}! You've achieved your savings goal." 
     print(status)
-else:
+else:                                                                           # if current savings percentage is < savings goal then print message with percentage away from goal
     status = f"{saving_goal - savings_percentage}% away from your goal"
     print(f"Your savings percentage is {savings_percentage}% \nKeep working on your savings, {name}. You're " + status)
 
@@ -96,7 +96,7 @@ else:
 # Savings Goal: 30%
 # Status: 5% away from your goal.
 
-print(f'Financial Health Summary for {name}:')
-print(f'Income: {monthly_income} \nExpenses: {monthly_expense} \nSavings: {savings} ({savings_percentage}%) ')
+print(f'Financial Health Summary for {name}:')                                                                      
+print(f'Income: {monthly_income} \nExpenses: {monthly_expense} \nSavings: {savings} ({savings_percentage}%) ')     
 print(f'Expense Breakdown: \nEssentials: {essential_expense_percentage}% \nWants: {wants_expense_percentage}%')
 print(f'Savings/Investments: {savings_percentage}% \nSavings Goal: {saving_goal}% \nStatus: {status}')
