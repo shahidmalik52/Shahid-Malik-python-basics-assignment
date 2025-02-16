@@ -1,0 +1,5 @@
+Travel Summary
+Destination: Murree
+Weather Condition: Cold
+Total Trip Cost: 17000.0
+Packing List: ['Jacket', 'Gloves', 'Warm Clothes']
